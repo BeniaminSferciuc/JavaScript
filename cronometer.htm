@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans:wght@700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            /* margin: 0;
+            padding: 0; */
+            background-color: rgb(235, 235, 235);
+            overflow: hidden;
+        }
+
+        main {
+            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        button {
+            font-family: Verdana;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            background-color: white;
+            border: none;
+            border-radius: 40px;
+            box-shadow: 
+                2px 2px 15px rgb(188, 188, 188),
+                -2px -2px 10px rgb(254, 254, 254);
+        }
+
+        button:focus {
+            outline: solid 1.5px gold;
+            outline-offset: 2px; 
+        }
+
+        button:hover {
+            background-color: rgb(248, 248, 248);
+            text-decoration: overline solid gray;
+        }
+
+        div {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            background-color: gold;
+            width: 16rem;
+            height: 16rem;
+            text-align: center;
+            border-radius: 8rem;
+            box-shadow: 
+                5px 5px 15px rgb(198, 198, 198),
+                -5px -5px 15px rgb(254, 254, 254);
+        }
+
+        h1 {
+            padding: 1rem;
+        }
+        
+        @media only screen and (max-width: 600px){
+            main {
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 350px){
+            main {
+                flex-direction: column;
+            }
+
+            div {
+                width: 12rem;
+                height: 12rem;
+                text-align: center;
+                font-size: 36px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <button onclick="start()" title="Press the button and start timer!">START</button>
+        <div>
+            <h1 id="h1"></h1>
+        </div>
+        <button onclick="stop()" title="Press the button and stop timer!">STOP</button>
+    </main>
+</body>
+<script>
+
+    let my = 0;
+    let c = 1;
+    
+    function start(){
+        my = setInterval(cronometer, 1000);
+        
+        function cronometer() {
+            document.getElementById('h1').innerText = c;
+            c++;
+        }
+    }
+
+    function stop() {
+        clearInterval(my);
+    }
+
+</script>
+</html>
